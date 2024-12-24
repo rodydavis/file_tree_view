@@ -118,6 +118,12 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
+  &#47;&#47;&#47; Check if the platform is Web or WASM, and display a message if it is.
+  if (kIsWasm || kIsWeb) {
+    return const AlertDialog(
+      title: Text(&quot;Web platform is not supported&quot;),
+    );
+  }
   return DirectoryTreeStateProvider(
     notifier: DirectoryTreeStateNotifier(),
     child: FoldableDirectoryTree(

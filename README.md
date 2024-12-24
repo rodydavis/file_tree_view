@@ -6,9 +6,22 @@ A Flutter package to view directories and files in a foldable tree structure. Th
 
 - **Folder and File Tree Structure**: Display files and folders in a nested tree layout.
 - **Foldable Directories**: Allow users to expand and collapse directories.
-- **Custom Icons**: Easily customize folder and file icons.
+- **Custom Icons**: Easily customize foldaer and file icons.
 - **Custom Text Styles**: Style folder and file names using `TextStyle`.
 - **File Tap Handler**: Handle file taps to perform custom actions.
+
+| Platform   | Supported  |
+|------------|------------|
+| **Android** | ✓          |
+| **iOS**     | ✓          |
+| **Windows** | ✓          |
+| **Linux**   | ✓          |
+| **macOS**   | ✓          |
+| **Web**     | ✘          |
+
+_Note_: This package is not currently compatible with Web. 
+
+<br>
 
 <img src="https://i.imgur.com/CIw6251.gif" alt="gif" width="210" height="390" style="padding-right:45px"/>
 <img src = "https://i.imgur.com/dKUlq8v.gif" alt="gif" width="210" height="390"/>

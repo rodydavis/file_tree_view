@@ -77,22 +77,25 @@
     </section>
 
     
+<section class="desc markdown">
+  <p>Constructs a <a href="../../file_tree_view/DirectoryTreeViewer-class.html">DirectoryTreeViewer</a> with the given properties.</p>
+</section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">const DirectoryTreeViewer(
-    {super.key,
-    required this.rootPath,
-    this.onFileTap,
-    this.folderClosedicon = const Icon(Icons.folder),
-    this.folderOpenedicon = const Icon(Icons.folder_open,),
-    this.fileIcon = const Icon(Icons.insert_drive_file),
-    this.folderNameStyle=const TextStyle(),
-    this.fileNameStyle=const TextStyle(),
-    this.fileIconBuilder
-    });</code></pre>
+  <pre class="language-dart"><code class="language-dart">const DirectoryTreeViewer({
+  super.key,
+  required this.rootPath,
+  this.onFileTap,
+  this.folderClosedicon = const Icon(Icons.folder),
+  this.folderOpenedicon = const Icon(Icons.folder_open),
+  this.fileIcon = const Icon(Icons.insert_drive_file),
+  this.folderNameStyle = const TextStyle(),
+  this.fileNameStyle = const TextStyle(),
+  this.fileIconBuilder,
+});</code></pre>
 </section>
 
 

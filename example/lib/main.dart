@@ -2,11 +2,12 @@ import 'package:file_tree_view/file_tree_view.dart';
 import 'package:flutter/material.dart';
 import 'package:file_icon/file_icon.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter/foundation.dart'; 
 
 void main() {
   runApp(
     const MaterialApp(
-      home:  Home()
+      home: kIsWeb?Scaffold(body: Center(child: Text("Web not supported"),),): Home()
     ));
 }
 
