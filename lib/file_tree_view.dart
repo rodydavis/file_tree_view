@@ -1,8 +1,6 @@
-library file_tree_view;
-
 import 'dart:io';
-import 'package:flutter/material.dart';
 import 'package:path/path.dart' as path;
+import 'package:flutter/material.dart';
 
 class DirectoryTreeViewer extends StatelessWidget {
   final String rootPath;
@@ -12,6 +10,7 @@ class DirectoryTreeViewer extends StatelessWidget {
   final dynamic fileIcon;
   final TextStyle folderNameStyle;
   final TextStyle fileNameStyle;
+  final Widget Function(String fileExtension)? fileIconBuilder;
 
   const DirectoryTreeViewer(
       {super.key,
@@ -21,7 +20,8 @@ class DirectoryTreeViewer extends StatelessWidget {
       this.folderOpenedicon = const Icon(Icons.folder_open,),
       this.fileIcon = const Icon(Icons.insert_drive_file),
       this.folderNameStyle=const TextStyle(),
-      this.fileNameStyle=const TextStyle()
+      this.fileNameStyle=const TextStyle(),
+      this.fileIconBuilder
       });
 
   @override
@@ -36,6 +36,7 @@ class DirectoryTreeViewer extends StatelessWidget {
         folderClosedicon: folderClosedicon,
         folderOpenedicon: folderOpenedicon,
         onFileTap: onFileTap,
+        fileIconBuilder: fileIconBuilder,
       ),
     );
   }
@@ -76,6 +77,7 @@ class FoldableDirectoryTree extends StatelessWidget {
   final dynamic fileIcon;
   final TextStyle folderNameStyle;
   final TextStyle fileNameStyle;
+  final Widget Function(String fileExtension)? fileIconBuilder;
 
   const FoldableDirectoryTree(
       {super.key,
@@ -85,7 +87,8 @@ class FoldableDirectoryTree extends StatelessWidget {
       required this.folderOpenedicon,
       required this.fileIcon,
       required this.folderNameStyle,
-      required this.fileNameStyle
+      required this.fileNameStyle,
+      this.fileIconBuilder,
       });
 
   Widget _buildDirectoryTree(
@@ -131,8 +134,10 @@ class FoldableDirectoryTree extends StatelessWidget {
       ],
     );
   }
-
+  
   Widget _buildFileItem(File file) {
+    final extension = path.extension(file.path).toLowerCase();
+    final customIcon = fileIconBuilder != null? fileIconBuilder!(extension): fileIcon;
     return InkWell(
       onTap: () {
         if (onFileTap != null) {
@@ -141,7 +146,7 @@ class FoldableDirectoryTree extends StatelessWidget {
       },
       child: Row(
         children: [
-          fileIcon,
+          customIcon,
           const SizedBox(width: 8),
           Text(
             path.basename(file.path),

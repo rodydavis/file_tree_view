@@ -10,6 +10,9 @@ A Flutter package to view directories and files in a foldable tree structure. Th
 - **Custom Text Styles**: Style folder and file names using `TextStyle`.
 - **File Tap Handler**: Handle file taps to perform custom actions.
 
+<img src="https://i.imgur.com/CIw6251.gif" alt="gif" width="210" height="390" style="padding-right:45px"/>
+<img src = "https://i.imgur.com/dKUlq8v.gif" alt="gif" width="210" height="390"/>
+
 ## Getting Started
 
 To get started, add the `file_tree_view` package to your `pubspec.yaml` file:
@@ -33,13 +36,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(title: Text('File Tree View')),
-        body: DirectoryTreeViewer(
-          rootPath: '/path/to/your/directory',  // Specify the root directory path
-          onFileTap: (file) {
-            // Handle file tap action
-            print('Tapped on file: ${file.path}');
-          },
-        ),
+        body: DirectoryTreeViewer(rootPath: '/path/to/your/directory'), // Specify the root directory path
       ),
     );
   }
@@ -51,30 +48,46 @@ class MyApp extends StatelessWidget {
 ```dart
 import 'package:file_tree_view/file_tree_view.dart';
 import 'package:flutter/material.dart';
+import 'package:file_icon/file_icon.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    const MaterialApp(
+      home:  Home()
+    ));
 }
 
-class MyApp extends StatelessWidget {
+class Home extends StatelessWidget {
+  const Home({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(title: Text('File Tree View')),
-        body: DirectoryTreeViewer(
-          rootPath: '/path/to/your/directory',
-          folderClosedIcon:Icon(FontAwesomeIcons.folder),
-          folderClosedIcon:SvgPicture.asset('assets/your_icon.svg'), //SVG,PNG and Icon() are supported
-          fileIcon:Icon(Icons.insert_drive_file),
-          onFileTap: (file) {
-            print('Tapped on file: ${file.path}');
-          },
+    return Scaffold(
+      backgroundColor: const Color(0xff181818),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        iconTheme: const IconThemeData(color: Colors.grey),
+      ),
+      drawer: Drawer(
+        backgroundColor:  const Color(0xff2b2b2b),
+        child: SingleChildScrollView(
+          child: SizedBox(
+            child: DirectoryTreeViewer(
+              rootPath: '/home/athul/Projects/AndroidApps/apps/survey_app', //Adjust the root path to desired folder
+              folderNameStyle: const TextStyle(color: Colors.grey),
+              fileNameStyle: const TextStyle(color: Colors.grey),
+              folderClosedicon: SvgPicture.asset('assets/folder.svg',height: 28,width: 28),
+              folderOpenedicon: SvgPicture.asset('assets/open-file-folder.svg',height: 28,width: 28),
+              fileIconBuilder: (extension)=>FileIcon(extension),
+          ),    
+          ),
         ),
       ),
+      body: const Center(child: Text("Example with custom icons",style: TextStyle(color: Colors.grey))),
     );
   }
 }
+
 
 ```
