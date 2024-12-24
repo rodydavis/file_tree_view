@@ -26,14 +26,7 @@ _Note_: This package is not currently compatible with Web.
 <img src="https://i.imgur.com/CIw6251.gif" alt="gif" width="210" height="390" style="padding-right:45px"/>
 <img src = "https://i.imgur.com/dKUlq8v.gif" alt="gif" width="210" height="390"/>
 
-## Getting Started
 
-To get started, add the `file_tree_view` package to your `pubspec.yaml` file:
-
-```yaml
-dependencies:
-  file_tree_view: ^1.0.0
-```
 ## Basic Usage
 ```dart
 import 'package:file_tree_view/file_tree_view.dart';
