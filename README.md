@@ -32,7 +32,7 @@ To get started, add the `file_tree_view` package to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  file_tree_view: ^1.0.0
+  file_tree_view: ^0.0.2
 ```
 ## Basic Usage
 ```dart
