@@ -26,6 +26,13 @@ _Note_: This package is not currently compatible with Web.
 <img src="https://i.imgur.com/CIw6251.gif" alt="gif" width="210" height="390" style="padding-right:45px"/>
 <img src = "https://i.imgur.com/acLZGFu.gif" alt="gif" width="210" height="390"/>
 
+## Installation
+
+```yaml
+dependencies:
+  file_tree_view: ^0.0.3
+```
+
 ## Basic Usage
 ```dart
 import 'package:file_tree_view/file_tree_view.dart';
