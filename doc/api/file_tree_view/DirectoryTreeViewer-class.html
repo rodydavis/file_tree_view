@@ -16,15 +16,11 @@
   <link rel="stylesheet" href="../static-assets/github.css?v1">
   <link rel="stylesheet" href="../static-assets/styles.css?v1">
   <link rel="icon" href="../static-assets/favicon.png?v1">
-
   
 </head>
 
-
 <body data-base-href="../" data-using-base-href="false" class="light-theme">
-
 <div id="overlay-under-drawer"></div>
-
 <header id="title">
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
@@ -49,7 +45,6 @@
   </div>
 </header>
 <main>
-
 <div
     id="dartdoc-main-content"
     class="main-content"
@@ -61,9 +56,6 @@
 </h1></div>
 
     
-<section class="desc markdown">
-  <p>A widget to display a directory tree structure with foldable directories and customizable file/folder icons and text styles.</p>
-</section>
 
 
     <section>
@@ -84,7 +76,7 @@
         
 
 
-
+        
         
 
 
@@ -94,10 +86,9 @@
     
   <section class="summary offset-anchor" id="constructors">
     <h2>Constructors</h2>
-
     <dl class="constructor-summary-list">
         <dt id="DirectoryTreeViewer" class="callable">
-          <span class="name"><a href="../file_tree_view/DirectoryTreeViewer/DirectoryTreeViewer.html">DirectoryTreeViewer</a></span><span class="signature">({<span class="parameter" id="-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> <span class="parameter-name">key</span>, </span><span class="parameter" id="-param-rootPath"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">rootPath</span>, </span><span class="parameter" id="-param-onFileTap"><span class="type-annotation">void</span> <span class="parameter-name">onFileTap</span>(<span class="parameter" id="param-"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-io/File-class.html">File</a></span></span>)?, </span><span class="parameter" id="-param-folderClosedicon"><span class="type-annotation">dynamic</span> <span class="parameter-name">folderClosedicon</span> = <span class="default-value">const Icon(Icons.folder)</span>, </span><span class="parameter" id="-param-folderOpenedicon"><span class="type-annotation">dynamic</span> <span class="parameter-name">folderOpenedicon</span> = <span class="default-value">const Icon(Icons.folder_open)</span>, </span><span class="parameter" id="-param-fileIcon"><span class="type-annotation">dynamic</span> <span class="parameter-name">fileIcon</span> = <span class="default-value">const Icon(Icons.insert_drive_file)</span>, </span><span class="parameter" id="-param-folderNameStyle"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a></span> <span class="parameter-name">folderNameStyle</span> = <span class="default-value">const TextStyle()</span>, </span><span class="parameter" id="-param-fileNameStyle"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a></span> <span class="parameter-name">fileNameStyle</span> = <span class="default-value">const TextStyle()</span>, </span><span class="parameter" id="-param-fileIconBuilder"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span> <span class="parameter-name">fileIconBuilder</span>(<span class="parameter" id="param-fileExtension"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">fileExtension</span></span>)?</span>})</span>
+          <span class="name"><a href="../file_tree_view/DirectoryTreeViewer/DirectoryTreeViewer.html">DirectoryTreeViewer</a></span><span class="signature">({<span class="parameter" id="-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> <span class="parameter-name">key</span>, </span><span class="parameter" id="-param-rootPath"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">rootPath</span>, </span><span class="parameter" id="-param-onFileTap"><span class="type-annotation">void</span> <span class="parameter-name">onFileTap</span>(<span class="parameter" id="param-"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-io/File-class.html">File</a></span></span>)?, </span><span class="parameter" id="-param-folderActions"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>&gt;</span>?</span> <span class="parameter-name">folderActions</span>, </span><span class="parameter" id="-param-fileActions"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>&gt;</span>?</span> <span class="parameter-name">fileActions</span>, </span><span class="parameter" id="-param-folderStyle"><span class="type-annotation"><a href="../style/FolderStyle-class.html">FolderStyle</a>?</span> <span class="parameter-name">folderStyle</span>, </span><span class="parameter" id="-param-fileStyle"><span class="type-annotation"><a href="../style/FileStyle-class.html">FileStyle</a>?</span> <span class="parameter-name">fileStyle</span>, </span><span class="parameter" id="-param-isUnfoldedFirst"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">isUnfoldedFirst</span> = <span class="default-value">true</span>, </span><span class="parameter" id="-param-editingFieldStyle"><span class="type-annotation"><a href="../style/EditingFieldStyle-class.html">EditingFieldStyle</a>?</span> <span class="parameter-name">editingFieldStyle</span>, </span><span class="parameter" id="-param-enableCreateFileOption"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">enableCreateFileOption</span> = <span class="default-value">false</span>, </span><span class="parameter" id="-param-enableCreateFolderOption"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">enableCreateFolderOption</span> = <span class="default-value">false</span>, </span><span class="parameter" id="-param-enableDeleteFileOption"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">enableDeleteFileOption</span> = <span class="default-value">false</span>, </span><span class="parameter" id="-param-enableDeleteFolderOption"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">enableDeleteFolderOption</span> = <span class="default-value">false</span>, </span><span class="parameter" id="-param-fileIconBuilder"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span> <span class="parameter-name">fileIconBuilder</span>(<span class="parameter" id="param-fileExtension"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">fileExtension</span></span>)?</span>})</span>
         </dt>
         <dd>
           Constructs a <a href="../file_tree_view/DirectoryTreeViewer-class.html">DirectoryTreeViewer</a> with the given properties.
@@ -111,21 +102,81 @@
       id="instance-properties">
     <h2>Properties</h2>
     <dl class="properties">
-        <dt id="fileIcon" class="property">
-  <span class="name"><a href="../file_tree_view/DirectoryTreeViewer/fileIcon.html">fileIcon</a></span>
-  <span class="signature">&#8594; dynamic</span>
+        <dt id="editingFieldStyle" class="property">
+  <span class="name"><a href="../file_tree_view/DirectoryTreeViewer/editingFieldStyle.html">editingFieldStyle</a></span>
+  <span class="signature">&#8594; <a href="../style/EditingFieldStyle-class.html">EditingFieldStyle</a>?</span>
   
 
 </dt>
 <dd>
-  The icon for files. Default is a generic file icon.
+  Custom styling for text editing field.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="enableCreateFileOption" class="property">
+  <span class="name"><a href="../file_tree_view/DirectoryTreeViewer/enableCreateFileOption.html">enableCreateFileOption</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  
+
+</dt>
+<dd>
+  Enables file creation option
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="enableCreateFolderOption" class="property">
+  <span class="name"><a href="../file_tree_view/DirectoryTreeViewer/enableCreateFolderOption.html">enableCreateFolderOption</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  
+
+</dt>
+<dd>
+  Enables folder creation option
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="enableDeleteFileOption" class="property">
+  <span class="name"><a href="../file_tree_view/DirectoryTreeViewer/enableDeleteFileOption.html">enableDeleteFileOption</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  
+
+</dt>
+<dd>
+  Enables file deletion option
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="enableDeleteFolderOption" class="property">
+  <span class="name"><a href="../file_tree_view/DirectoryTreeViewer/enableDeleteFolderOption.html">enableDeleteFolderOption</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  
+
+</dt>
+<dd>
+  Enables folder deletion option
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="fileActions" class="property">
+  <span class="name"><a href="../file_tree_view/DirectoryTreeViewer/fileActions.html">fileActions</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>&gt;</span>?</span>
+  
+
+</dt>
+<dd>
+  Additional file action widgets
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
         <dt id="fileIconBuilder" class="property">
   <span class="name"><a href="../file_tree_view/DirectoryTreeViewer/fileIconBuilder.html">fileIconBuilder</a></span>
-  <span class="signature">&#8594; (<a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a> Function<span class="signature">(<span class="parameter" id="param-fileExtension"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">fileExtension</span></span>)</span>?)</span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a> Function<span class="signature">(<span class="parameter" id="param-fileExtension"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">fileExtension</span></span>)</span>?</span>
   
 
 </dt>
@@ -135,50 +186,38 @@
 
 </dd>
 
-        <dt id="fileNameStyle" class="property">
-  <span class="name"><a href="../file_tree_view/DirectoryTreeViewer/fileNameStyle.html">fileNameStyle</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a></span>
+        <dt id="fileStyle" class="property">
+  <span class="name"><a href="../file_tree_view/DirectoryTreeViewer/fileStyle.html">fileStyle</a></span>
+  <span class="signature">&#8594; <a href="../style/FileStyle-class.html">FileStyle</a>?</span>
   
 
 </dt>
 <dd>
-  The text style for file names. Default is an empty <a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a>.
+  Customizable file styling
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
-        <dt id="folderClosedicon" class="property">
-  <span class="name"><a href="../file_tree_view/DirectoryTreeViewer/folderClosedicon.html">folderClosedicon</a></span>
-  <span class="signature">&#8594; dynamic</span>
+        <dt id="folderActions" class="property">
+  <span class="name"><a href="../file_tree_view/DirectoryTreeViewer/folderActions.html">folderActions</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>&gt;</span>?</span>
   
 
 </dt>
 <dd>
-  The icon for closed folders. Default is a folder icon.
+  Additional folder action widgets
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
-        <dt id="folderNameStyle" class="property">
-  <span class="name"><a href="../file_tree_view/DirectoryTreeViewer/folderNameStyle.html">folderNameStyle</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a></span>
+        <dt id="folderStyle" class="property">
+  <span class="name"><a href="../file_tree_view/DirectoryTreeViewer/folderStyle.html">folderStyle</a></span>
+  <span class="signature">&#8594; <a href="../style/FolderStyle-class.html">FolderStyle</a>?</span>
   
 
 </dt>
 <dd>
-  The text style for folder names. Default is an empty <a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a>.
-  <div class="features"><span class="feature">final</span></div>
-
-</dd>
-
-        <dt id="folderOpenedicon" class="property">
-  <span class="name"><a href="../file_tree_view/DirectoryTreeViewer/folderOpenedicon.html">folderOpenedicon</a></span>
-  <span class="signature">&#8594; dynamic</span>
-  
-
-</dt>
-<dd>
-  The icon for opened folders. Default is a folder opened icon.
+  Customizable folder styling
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
@@ -192,6 +231,19 @@
 <dd class="inherited">
   The hash code for this object.
   <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="isUnfoldedFirst" class="property">
+  <span class="name"><a href="../file_tree_view/DirectoryTreeViewer/isUnfoldedFirst.html">isUnfoldedFirst</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  
+
+</dt>
+<dd>
+  Initial state of the <a href="../file_tree_view/DirectoryTreeViewer-class.html">DirectoryTreeViewer</a>.
+isUnfoldedFirst = true by defualt
+  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
@@ -209,7 +261,7 @@
 
         <dt id="onFileTap" class="property">
   <span class="name"><a href="../file_tree_view/DirectoryTreeViewer/onFileTap.html">onFileTap</a></span>
-  <span class="signature">&#8594; (void Function<span class="signature">(<span class="parameter" id="param-"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-io/File-class.html">File</a></span></span>)</span>?)</span>
+  <span class="signature">&#8594; void Function<span class="signature">(<span class="parameter" id="param-"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-io/File-class.html">File</a></span></span>)</span>?</span>
   
 
 </dt>
@@ -245,6 +297,7 @@
 
     </dl>
   </section>
+
     
   <section
       class="summary offset-anchor"
@@ -345,7 +398,7 @@ tools and by <a href="https://api.flutter.dev/flutter/foundation/DiagnosticsNode
 </dd>
 
         <dt id="toStringDeep" class="callable inherited">
-  <span class="name"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toStringDeep.html">toStringDeep</a></span><span class="signature">(<wbr>{<span class="parameter" id="toStringDeep-param-prefixLineOne"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">prefixLineOne</span> = <span class="default-value">&#39;&#39;</span>, </span><span class="parameter" id="toStringDeep-param-prefixOtherLines"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">prefixOtherLines</span>, </span><span class="parameter" id="toStringDeep-param-minLevel"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticLevel.html">DiagnosticLevel</a></span> <span class="parameter-name">minLevel</span> = <span class="default-value">DiagnosticLevel.debug</span></span>})
+  <span class="name"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticableTree/toStringDeep.html">toStringDeep</a></span><span class="signature">(<wbr>{<span class="parameter" id="toStringDeep-param-prefixLineOne"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">prefixLineOne</span> = <span class="default-value">&#39;&#39;</span>, </span><span class="parameter" id="toStringDeep-param-prefixOtherLines"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">prefixOtherLines</span>, </span><span class="parameter" id="toStringDeep-param-minLevel"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/DiagnosticLevel.html">DiagnosticLevel</a></span> <span class="parameter-name">minLevel</span> = <span class="default-value">DiagnosticLevel.debug</span>, </span><span class="parameter" id="toStringDeep-param-wrapWidth"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">wrapWidth</span> = <span class="default-value">65</span></span>})
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
   </span>
   
@@ -410,9 +463,7 @@ tools and by <a href="https://api.flutter.dev/flutter/foundation/DiagnosticsNode
     
     
 
-
   </div> <!-- /.main-content -->
-
   <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
     <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
 <header id="header-search-sidebar" class="hidden-l">
@@ -420,40 +471,30 @@ tools and by <a href="https://api.flutter.dev/flutter/foundation/DiagnosticsNode
     <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
 </header>
-
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../index.html">file_tree_view</a></li>
     <li><a href="../file_tree_view/file_tree_view-library.html">file_tree_view</a></li>
     <li class="self-crumb">DirectoryTreeViewer class</li>
 </ol>
 
-
     <h5>file_tree_view library</h5>
     <div id="dartdoc-sidebar-left-content"></div>
   </div>
-
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
   </div><!--/.sidebar-offcanvas-->
-
 </main>
-
 <footer>
   <span class="no-break">
     file_tree_view
-      0.0.1
+      0.0.4
   </span>
-
   
 </footer>
-
 
 
 <script src="../static-assets/highlight.pack.js?v1"></script>
 <script src="../static-assets/docs.dart.js"></script>
 
-
-
 </body>
-
 </html>
 

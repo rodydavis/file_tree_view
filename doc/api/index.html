@@ -16,15 +16,11 @@
   <link rel="stylesheet" href="static-assets/github.css?v1">
   <link rel="stylesheet" href="static-assets/styles.css?v1">
   <link rel="icon" href="static-assets/favicon.png?v1">
-
   
 </head>
 
-
 <body data-base-href="" data-using-base-href="false" class="light-theme">
-
 <div id="overlay-under-drawer"></div>
-
 <header id="title">
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
@@ -47,7 +43,6 @@
   </div>
 </header>
 <main>
-
   <div id="dartdoc-main-content" class="main-content">
       
 <section class="desc markdown">
@@ -95,14 +90,13 @@
 </tr>
 </tbody>
 </table>
-<p><em>Note</em>: This package is not currently compatible with Web</p>
+<p><em>Note</em>: This package is not currently compatible with Web.</p>
 <br>
 <img src="https://i.imgur.com/CIw6251.gif" alt="gif" width="210" height="390" style="padding-right:45px">
-<img src="https://i.imgur.com/dKUlq8v.gif" alt="gif" width="210" height="390">
-<h2 id="getting-started">Getting Started</h2>
-<p>To get started, add the <code>file_tree_view</code> package to your <code>pubspec.yaml</code> file:</p>
+<img src="https://i.imgur.com/acLZGFu.gif" alt="gif" width="210" height="390">
+<h2 id="installation">Installation</h2>
 <pre class="language-yaml"><code class="language-yaml">dependencies:
-  file_tree_view: ^1.0.0
+  file_tree_view: ^0.0.3
 </code></pre>
 <h2 id="basic-usage">Basic Usage</h2>
 <pre class="language-dart"><code class="language-dart">import 'package:file_tree_view/file_tree_view.dart';
@@ -127,14 +121,17 @@ class MyApp extends StatelessWidget {
 </code></pre>
 <h2 id="custom-icons-and-textstyle">Custom Icons and TextStyle</h2>
 <pre class="language-dart"><code class="language-dart">import 'package:file_tree_view/file_tree_view.dart';
+import 'package:file_tree_view/style.dart';
 import 'package:flutter/material.dart';
 import 'package:file_icon/file_icon.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter/foundation.dart'; 
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
   runApp(
     const MaterialApp(
-      home:  Home()
+      home: kIsWeb?Scaffold(body: Center(child: Text("Web not supported"),),): Home()
     ));
 }
 
@@ -154,11 +151,41 @@ class Home extends StatelessWidget {
         child: SingleChildScrollView(
           child: SizedBox(
             child: DirectoryTreeViewer(
-              rootPath: '/home/athul/Projects/AndroidApps/apps/survey_app', //Adjust the root path to desired folder
-              folderNameStyle: const TextStyle(color: Colors.grey),
-              fileNameStyle: const TextStyle(color: Colors.grey),
-              folderClosedicon: SvgPicture.asset('assets/folder.svg',height: 28,width: 28),
-              folderOpenedicon: SvgPicture.asset('assets/open-file-folder.svg',height: 28,width: 28),
+              rootPath: 'Your directory path here',
+              enableCreateFileOption: true,
+              enableCreateFolderOption: true,
+              editingFieldStyle: EditingFieldStyle(
+                textStyle: const TextStyle(
+                  color: Colors.grey,
+                ),
+                cursorColor: Colors.grey,
+                cursorHeight: 18,
+                verticalTextAlign: TextAlignVertical.top,
+                textfieldDecoration: const InputDecoration(
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(2)),
+                    borderSide: BorderSide(color: Colors.grey)
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(2)),
+                    borderSide: BorderSide(color: Colors.grey)
+                  ),
+                ),
+                folderIcon: const Icon(Icons.folder, color: Colors.grey,size: 20),
+                fileIcon: const Icon(Icons.edit_document, color: Colors.grey,size: 20),
+                doneIcon: const Icon(Icons.check, color: Colors.grey,size: 20),
+                cancelIcon: const Icon(Icons.close, color: Colors.grey,size: 20),
+              ),
+              folderStyle: FolderStyle(
+                folderNameStyle:  TextStyle(color: Colors.grey[400]),
+                folderClosedicon: SvgPicture.asset('assets/icons/folder.svg',height: 25,width: 25),
+                folderOpenedicon: SvgPicture.asset('assets/icons/open-file-folder.svg',height: 25,width: 25),
+                iconForCreateFile: const Icon(FontAwesomeIcons.fileCirclePlus,color: Colors.grey,size: 14),
+                iconForCreateFolder: const Icon(Icons.create_new_folder,color: Colors.grey,size: 17)
+              ),
+              fileStyle: FileStyle(
+                fileNameStyle: TextStyle(color: Colors.grey[400]),
+              ),
               fileIconBuilder: (extension)=&gt;FileIcon(extension),
           ),    
           ),
@@ -168,7 +195,6 @@ class Home extends StatelessWidget {
     );
   }
 }
-
 
 </code></pre>
 </section>
@@ -184,11 +210,16 @@ class Home extends StatelessWidget {
 <dd>
 </dd>
 
+          <dt id="style">
+  <span class="name"><a href="style/style-library.html">style</a></span> 
+
+</dt>
+<dd>
+</dd>
+
         </dl>
       </section>
-
   </div> <!-- /.main-content -->
-
   <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
     <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
 <header id="header-search-sidebar" class="hidden-l">
@@ -196,42 +227,33 @@ class Home extends StatelessWidget {
     <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
 </header>
-
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="https://github.com/AthulNoobie/file_tree_view">file_tree_view package</a></li>
 </ol>
-
 
     <h5 class="hidden-xs"><span class="package-name">file_tree_view</span> <span class="package-kind">package</span></h5>
     <ol>
       <li class="section-title">Libraries</li>
       <li><a href="file_tree_view/file_tree_view-library.html">file_tree_view</a></li>
+      <li><a href="style/style-library.html">style</a></li>
 </ol>
 
   </div>
-
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
   </div>
-
 </main>
-
 <footer>
   <span class="no-break">
     file_tree_view
-      0.0.1
+      0.0.4
   </span>
-
   
 </footer>
-
 
 
 <script src="static-assets/highlight.pack.js?v1"></script>
 <script src="static-assets/docs.dart.js"></script>
 
-
-
 </body>
-
 </html>
 
