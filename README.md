@@ -30,7 +30,7 @@ _Note_: This package is not currently compatible with Web.
 
 ```yaml
 dependencies:
-  file_tree_view: ^0.0.3
+  file_tree_view: ^0.0.4
 ```
 
 ## Basic Usage
