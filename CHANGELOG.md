@@ -12,3 +12,6 @@
 
 ## 0.0.5
 * Updated documentation
+
+## 0.0.6
+* Pub point error on 0.0.5
