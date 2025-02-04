@@ -105,6 +105,7 @@ class EditingFieldStyle {
   /// [TextStyle] for text in the text filed.
   final TextStyle? textStyle;
 
+  ///Custom styling for the [TextField] for creating files/folders.
   EditingFieldStyle(
       {this.textFieldHeight = 30,
       this.textFieldWidth = double.infinity,

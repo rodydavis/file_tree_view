@@ -1,5 +1,4 @@
 ## 0.0.1
-
 * Initial release
 
 ## 0.0.2
@@ -10,3 +9,6 @@
 
 ## 0.0.4
 * Added Create and delete file/folder option and optional action buttons
+
+## 0.0.5
+* Updated documentation
