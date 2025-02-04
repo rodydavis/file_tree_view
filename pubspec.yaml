@@ -1,6 +1,6 @@
 name: file_tree_view
 description: "A Flutter package for displaying foldable file directory trees."
-version: 0.0.4
+version: 0.0.5
 homepage: https://github.com/AthulNoobie/file_tree_view
 
 environment:
