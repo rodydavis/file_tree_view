@@ -4,28 +4,28 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 /// Defines customizable styling options for folder elements in the directory tree.
 class FolderStyle {
   /// Icon displayed when the folder is closed.
-  final dynamic folderClosedicon;
+  final Widget folderClosedicon;
 
   /// Icon displayed when the folder is opened.
-  final dynamic folderOpenedicon;
+  final Widget folderOpenedicon;
 
   /// Text style applied to folder names.
-  final TextStyle? folderNameStyle;
+  final TextStyle folderNameStyle;
 
   /// Icon used for the "create new folder" action.
-  final dynamic iconForCreateFolder;
+  final Widget iconForCreateFolder;
 
   /// Icon used for the "create new file" action within a folder.
-  final dynamic iconForCreateFile;
+  final Widget iconForCreateFile;
 
   /// Icon used for the "delete folder" action.
-  final dynamic iconForDeleteFolder;
+  final Widget iconForDeleteFolder;
 
   /// Icon for root folder closed state.
-  final dynamic rootFolderClosedIcon;
+  final Widget rootFolderClosedIcon;
 
   /// Icon for root folder open state.
-  final dynamic rootFolderOpenedIcon;
+  final Widget rootFolderOpenedIcon;
 
   /// Gap between items.
   final double itemGap;
@@ -37,8 +37,7 @@ class FolderStyle {
     this.rootFolderOpenedIcon = const Icon(Icons.keyboard_arrow_down_sharp),
     this.folderNameStyle = const TextStyle(),
     this.iconForCreateFolder = const Icon(Icons.create_new_folder),
-    this.iconForCreateFile =
-        const Icon(FontAwesomeIcons.fileCirclePlus, size: 20),
+    this.iconForCreateFile = const Icon(FontAwesomeIcons.fileCirclePlus, size: 20),
     this.iconForDeleteFolder = const Icon(Icons.delete),
     this.folderClosedicon = const Icon(Icons.folder),
     this.folderOpenedicon = const Icon(Icons.folder_open),
@@ -67,19 +66,19 @@ class FileStyle {
 
 class EditingFieldStyle {
   /// Leading icon/widget displayed while creating new folder.
-  final dynamic folderIcon;
+  final Widget folderIcon;
 
   /// Leading icon/widget displayed while creating new file.
-  final dynamic fileIcon;
+  final Widget fileIcon;
 
   /// [InputDecoration] for [TextField] which appears while creating new file/folder.
   final InputDecoration textfieldDecoration;
 
   /// Icon for done button.
-  final dynamic doneIcon;
+  final Widget doneIcon;
 
   /// Icon for cancel button.
-  final dynamic cancelIcon;
+  final Widget cancelIcon;
 
   /// Height of the text field.
   final double textFieldHeight;
@@ -106,18 +105,19 @@ class EditingFieldStyle {
   final TextStyle? textStyle;
 
   ///Custom styling for the [TextField] for creating files/folders.
-  EditingFieldStyle(
-      {this.textFieldHeight = 30,
-      this.textFieldWidth = double.infinity,
-      this.cursorHeight = 20,
-      this.cursorWidth = 2.0,
-      this.cursorRadius,
-      this.cursorColor,
-      this.verticalTextAlign,
-      this.textStyle,
-      this.textfieldDecoration = const InputDecoration(),
-      this.folderIcon = const Icon(Icons.folder),
-      this.fileIcon = const Icon(Icons.edit_document),
-      this.doneIcon = const Icon(Icons.check),
-      this.cancelIcon = const Icon(Icons.close)});
+  EditingFieldStyle({
+    this.textFieldHeight = 30,
+    this.textFieldWidth = double.infinity,
+    this.cursorHeight = 20,
+    this.cursorWidth = 2.0,
+    this.cursorRadius,
+    this.cursorColor,
+    this.verticalTextAlign,
+    this.textStyle,
+    this.textfieldDecoration = const InputDecoration(),
+    this.folderIcon = const Icon(Icons.folder),
+    this.fileIcon = const Icon(Icons.edit_document),
+    this.doneIcon = const Icon(Icons.check),
+    this.cancelIcon = const Icon(Icons.close),
+  });
 }
