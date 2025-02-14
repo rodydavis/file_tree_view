@@ -10,6 +10,8 @@ String? currentDir;
 class DirectoryTreeViewer extends StatelessWidget {
   final FileSystem fs;
 
+  final DirectoryTreeStateNotifier notifier;
+
   /// The root path of the directory to display.
   final String rootPath;
 
@@ -50,8 +52,10 @@ class DirectoryTreeViewer extends StatelessWidget {
   /// A function that returns a custom file icon based on the file extension.
   final Widget Function(String fileExtension)? fileIconBuilder;
 
+  final Decoration? Function(BuildContext, File)? buildFileForegroundDecoration, buildFileDecoration;
+
   /// Constructs a [DirectoryTreeViewer] with the given properties.
-  const DirectoryTreeViewer({
+  DirectoryTreeViewer({
     super.key,
     required this.fs,
     required this.rootPath,
@@ -67,14 +71,17 @@ class DirectoryTreeViewer extends StatelessWidget {
     this.enableDeleteFileOption = false,
     this.enableDeleteFolderOption = false,
     this.fileIconBuilder,
-  });
+    this.buildFileForegroundDecoration,
+    this.buildFileDecoration,
+    DirectoryTreeStateNotifier? notifier,
+  }) : notifier = notifier ?? DirectoryTreeStateNotifier(fs);
 
   @override
   Widget build(BuildContext context) {
     isParentOpen = isUnfoldedFirst;
     return DirectoryTreeStateProvider(
       fs: fs,
-      notifier: DirectoryTreeStateNotifier(fs),
+      notifier: notifier,
       child: FoldableDirectoryTree(
         fs: fs,
         folderStyle: folderStyle,
@@ -89,6 +96,8 @@ class DirectoryTreeViewer extends StatelessWidget {
         rootPath: rootPath,
         onFileTap: onFileTap,
         fileIconBuilder: fileIconBuilder,
+        buildFileDecoration: buildFileDecoration,
+        buildFileForegroundDecoration: buildFileForegroundDecoration,
       ),
     );
   }
@@ -188,6 +197,7 @@ class FoldableDirectoryTree extends StatefulWidget {
   final List<Widget>? fileActions;
   final FileSystem fs;
   final Widget Function(String fileExtension)? fileIconBuilder;
+  final Decoration? Function(BuildContext, File)? buildFileForegroundDecoration, buildFileDecoration;
 
   const FoldableDirectoryTree({
     super.key,
@@ -204,6 +214,8 @@ class FoldableDirectoryTree extends StatefulWidget {
     this.enableDeleteFileOption = false,
     this.enableDeleteFolderOption = false,
     this.fileIconBuilder,
+    this.buildFileForegroundDecoration,
+    this.buildFileDecoration,
   });
 
   @override
@@ -366,31 +378,37 @@ class _FoldableDirectoryTreeState extends State<FoldableDirectoryTree> {
     final customIcon = widget.fileIconBuilder != null
         ? widget.fileIconBuilder!(extension)
         : widget.fileStyle?.fileIcon ?? FileStyle().fileIcon;
-    return InkWell(
-      onTap: () {
-        if (widget.onFileTap != null) {
-          widget.onFileTap!(file);
-        }
-      },
-      child: Row(
-        children: [
-          customIcon,
-          const SizedBox(width: 8),
-          Text(
-            path.basename(file.path),
-            style: widget.fileStyle?.fileNameStyle ?? FileStyle().fileNameStyle,
+    return Builder(builder: (context) {
+      return Container(
+        foregroundDecoration: widget.buildFileForegroundDecoration?.call(context, file),
+        decoration: widget.buildFileDecoration?.call(context, file),
+        child: InkWell(
+          onTap: () {
+            if (widget.onFileTap != null) {
+              widget.onFileTap!(file);
+            }
+          },
+          child: Row(
+            children: [
+              customIcon,
+              const SizedBox(width: 8),
+              Text(
+                path.basename(file.path),
+                style: widget.fileStyle?.fileNameStyle ?? FileStyle().fileNameStyle,
+              ),
+              ...widget.fileActions ?? [],
+              if (widget.enableDeleteFileOption)
+                IconButton(
+                    onPressed: () {
+                      file.deleteSync(recursive: true);
+                      setState(() {});
+                    },
+                    icon: widget.fileStyle?.iconForDeleteFile ?? FileStyle().iconForDeleteFile)
+            ],
           ),
-          ...widget.fileActions ?? [],
-          if (widget.enableDeleteFileOption)
-            IconButton(
-                onPressed: () {
-                  file.deleteSync(recursive: true);
-                  setState(() {});
-                },
-                icon: widget.fileStyle?.iconForDeleteFile ?? FileStyle().iconForDeleteFile)
-        ],
-      ),
-    );
+        ),
+      );
+    });
   }
 
   @override
